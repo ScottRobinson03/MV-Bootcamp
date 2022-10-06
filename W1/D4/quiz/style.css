@@ -1,0 +1,47 @@
+body {
+    width: 100vw;
+}
+
+h1 {
+    margin-bottom: 5vw;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+}
+
+p {
+    text-align: center;
+    word-wrap: normal;
+}
+
+.flex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-answer {
+    justify-content: left;
+}
+
+ol.flex {
+    gap: 5vw;
+    padding-left: 0px;
+}
+
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr;
+        row-gap: 7.5vh;
+    }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+
+    <main>
+        <section id="audio">
+            <h2>Audio</h2>
+            <form id="audio-quiz">
+                <ol class="flex">
+                    <li class="flex">
+                        <p>Which song, originally released in 1983 and remastered in 2013, is this?</p>
+                        <audio controls src="assets/sweetdreams.mov" controlslist="nodownload noplaybackrate"></audio>
+
+                        <br />
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="eyeOfTheTiger" name="popSong" value="Eye of the tiger">
+                            <label class="required-label" for="eyeOfTheTiger">Eye of the tiger</label>
+                        </section>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="sweetDreams" name="popSong" value="Sweet Dreams">
+                            <label class="required-label" for="sweetDreams">Sweet Dreams</label>
+                        </section>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="anotherOneBitesTheDust" name="popSong" value="Another one bites the dust">
+                            <label class="required-label" for="anotherOneBitesTheDust">Another one bites the dust</label>
+                        </section>
+                    </li>
+                    <li class="flex">
+                        <p>Which TV show, originally airing in 1983 starring Rowan Atkinson, has this intro song?</p>
+                        <audio controls src="assets/blackadder.mp3" controlslist="nodownload noplaybackrate"></audio>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="mrBean" name="tvIntro" value="Mr Bean">
+                            <label class="required-label" for="mrBean">Mr Bean</label>
+                        </section>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="twoRonnies" name="tvIntro" value="Two Ronnies">
+                            <label class="required-label" for="twoRonnies">The two Ronnies</label>
+                        </section>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="blackAdder" name="tvIntro" value="Black Adder">
+                            <label class="required-label" for="blackAdder">Black Adder</label>
+                        </section>
+                    </li>
+                    <li class="flex">
+                        <p>Which infamous piece of classical piece from the 1800s is this?</p>
+                        <audio controls src="assets/mountainofthelionking.mp3" controlslist="nodownload noplaybackrate"></audio>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="furElise" name="classicalMusic" value="Fur Elise">
+                            <label class="required-label" for="furElise">Fur Elise</label>
+                        </section>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="lionKing" name="classicalMusic" value="Lion King">
+                            <label class="required-label" for="lionKing">In the Hall of the Mountain King</label>
+                        </section>
+
+                        <br />
+
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="sugarPlumFairy" name="classicalMusic" value="Sugar Plum Fairy">
+                            <label class="required-label" for="sugarPlumFairy">Sugar Plum Fairy</label>
+                        </section>
+                    </li>
+                    <li class="flex">
+                        <p>Which American science fiction show, has this intro song, often associated with the illuminati?</p>
+                        <audio controls src="assets/x-files.mov" controlslist="nodownload noplaybackrate"></audio>
+
+                        <br />
+                        
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="x-files" name="tvCrimeIntro" value="X-Files">
+                            <label class="required-label" for="x-files">X-Files</label>
+                        </section>
+                        
+                        <br />
+                        
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="ncis" name="tvCrimeIntro" value="NCIS">
+                            <label class="required-label" for="ncis">NCIS</label>
+                        </section>
+                        
+                        <br />
+                        
+                        <section class="form-answer">
+                            <input class="form-check-input" type="radio" id="silentWitness" name="tvCrimeIntro" value="Silent Witness">
+                            <label class="required-label" for="silentWitness">Silent Witness</label>
+                        </section>
+                    </li>
+                </ol>
+            </form>
+        </section>
+        <section id="maths">
+            <h2>Maths</h2>
+            <form id="maths-quiz">
+                <ol class="flex">
+                    <li class="flex">
+                        <p>What is 3 * 3?</p>
+                    </li>
+                </ol>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
