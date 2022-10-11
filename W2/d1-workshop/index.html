@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Card Creation Tool</title>
+</head>
+<body>
+    <main>
+        <section class="card-container">
+            <article class="card">
+                <section class="container">
+                    <section class="card-info">
+                        <section class="title-container">
+                            <label for="title">Name:</label>
+                            <input type="text" name="title" id="title">
+                        </section>
+
+                        <section class="skill-container">
+                            <label for="slider" id="slider-label">Skill Level:</label>
+                            <input type="range" name="slider" id="slider">
+                        </section>
+
+                        <section class="show-skill-container">
+                            <label for="show-skill">Show Skill?</label>
+                            <input type="checkbox" name="show-skill" id="show-skill">
+                        </section>
+                    </section>
+                    <button disabled id="btn-create-card">Create Card</button>
+                </section>
+                
+            </article>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
