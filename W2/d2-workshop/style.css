@@ -1,0 +1,48 @@
+/* raw elements */
+
+body {
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* classes */
+
+.button {
+    background-color: teal;
+    border-radius: 5px;
+    color:rgb(226, 43, 223);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card {
+    background-color: rgb(18, 99, 99);
+    padding: 5% 5%;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.card-info {
+    color: rgb(226, 43, 223);
+}
+
+
+.main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    width: auto;
+}
+
+.name {
+    text-decoration: underline;
+}
+
+.skill {
+    font-size: 16px;
+}
