@@ -8,15 +8,16 @@ If the number is not divisible by either 3 or 5, return the number.
 function fizzBuzz(num) {
     const fizz = num % 3 == 0;
     const buzz = num % 5 == 0;
-    if (fizz & buzz) {
-        return "FIZZBUZZ";
-    } else if (fizz) {
-        return "FIZZ";
-    } else if (buzz) {
-        return "BUZZ"
-    } else {
-        return num;
+
+    let msg = ""
+    if (fizz) {
+        msg += "FIZZ";
     }
+    if (buzz) {
+        msg += "BUZZ";
+    }
+    
+    return msg ? msg : num
 }
 
 // Test command (in terminal) "npm run test:d1:medium:fizzBuzz"
