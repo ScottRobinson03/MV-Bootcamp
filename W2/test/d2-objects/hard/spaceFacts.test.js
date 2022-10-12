@@ -15,7 +15,7 @@ describe('spaceStats', () => {
     expect(Math.round(spaceStats.weightInKG)).toBeCloseTo(80);
   });
   it('ageOnMercury method converts Earth age to Mercury age', () => {
-    expect(Math.round(spaceStats.ageOnMercury())).toBeCloseTo(94);
+    expect(Math.round(spaceStats.ageOnMercury())).toBeCloseTo(95);
   });
   it('weightOnMercury method converts Earth weight correctly', () => {
     expect(Math.round(spaceStats.weightOnMercury())).toBeCloseTo(30);
