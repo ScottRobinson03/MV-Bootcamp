@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Devanagari', sans-serif;
+}
+
+body {
+    background-color: beige;
+}
+
+button {
+    background-color: brown;
+    border: 1px solid brown;
+    border-radius: 5px;
+    color:gold;
+    font-size: x-large;
+    font-weight: 500;
+    opacity: 0.95;
+    padding: 10px;
+    width: 100%;
+}
+
+button:active {
+    background-color: cadetblue;
+    border: 1px solid cadetblue;
+    color:aliceblue;
+}
+
+button:hover {
+    background-color: gold;
+    border: 1px solid gold;
+    color: brown;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color:brown;
+    text-align: center;
+}
+
+h2.card-title {
+    background-color: brown;
+    color: gold;
+    margin: 0;
+    padding: 1%;
+    text-align: center;
+}
+
+input.earth {
+    accent-color: yellow;
+}
+
+input.fire {
+    accent-color: red;
+}
+
+input.water {
+    accent-color: silver;
+}
+
+input.wind {
+    accent-color: blue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 70px;
+    margin-top: auto;
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+td {
+    height: 2.5rem;
+    padding: 10px;
+}
+
+td.black {
+    background-color: black;
+}
+
+td.blue {
+    background-color: blue;
+}
+
+td.bronze {
+    background-color: #CD7F32;
+}
+
+td.gold {
+    background-color: gold;
+}
+
+td.green {
+    background-color: green;
+}
+
+td.red {
+    background-color: red;
+}
+
+td.silver {
+    background-color: silver;
+}
+
+td.yellow {
+    background-color: yellow;
+}
+
+/* raw classes */
+
+.main {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgb(248, 205, 188);
+    border: 1px solid brown;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.card img {
+    max-height: 470px;
+    max-width: 480px;
+    padding: 20px;
+    width: 100%;
+}
+
+.card.earth {
+    background-color: black;
+}
+
+.card.fire {
+    background-color: gold;
+}
+
+.card.water {
+    background-color: green;
+}
+
+.card.wind {
+    background-color: #CD7F32;
+}
+
+.intro {
+    overflow-x:auto;
+}
+
+.single-slider {
+    padding: 5px;
+}
+
+.sliders {
+    background-image: url("https://image.shutterstock.com/image-illustration/magic-hat-tattered-sorting-illustration-600w-2004374252.jpg");
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 20px;
+    text-align: left;
+}
+
+.sliders label {
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* media queries */
+
+@media(min-width: 500px){
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 1000px){
+    .main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 1200px) {
+    .main{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
