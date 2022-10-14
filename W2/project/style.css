@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Devanagari', sans-serif;
+}
+
+#card-container {
+    display: grid;
+    justify-content: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+
+article {
+    background-color: beige;
+    margin: 2%;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+button {
+    margin-bottom: 10px;
+}
+
+button.dropdown-toggle {
+    margin-left: 1%;
+}
+
+h1 {
+    padding-top: 1vw;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    max-height: 350px;
+    margin-top: 5%;
+    width: 100%;
+}
+
+p {
+    height: 10vh;
+    padding: 0 1%;
+    text-align: center;
+}
+
+/* media queries */
+
+@media(min-width: 500px){
+    #card-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 1000px){
+    #card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 1200px) {
+    #card-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
