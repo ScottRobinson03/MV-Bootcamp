@@ -24,6 +24,10 @@ numCards.addEventListener("input", () => {
 })
 
 function createCards(numCards) {
+    // for some reason the `max` property doesn't prevent manual inputs going over
+    // so we need to ensure that the number of cards definitely isn't over the max.
+    if (+numCards.value > +numCards.max) numCards.value = numCards.max;
+
     cardSection.replaceChildren();
     // Reset randomInfo so that there's no missing data
     randomInfo = originalRandomInfo.slice();
