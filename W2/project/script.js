@@ -100,6 +100,7 @@ let needToRegenerate = false;
 const cardContainer = document.getElementById("card-container");
 const main = document.querySelector("main");
 const dropdown = document.getElementById("dropdown-filter");
+const inputLabel = document.getElementById("inputGroup-sizing-sm");
 const searchBar = document.getElementById("search");
 searchBar.addEventListener("input", handleSearchQuery);
 
@@ -144,7 +145,7 @@ class ClassWatcher { // uses MutationObserver to call a function when a specifie
     }
 }
 
-// When the 'show' class is removed from `main`, call `processFilters`
+// When the 'show' class is removed from `main` (when we close the dropdown), call `processFilters`
 new ClassWatcher(main, 'show', processFilters)
 
 function searchByText(text) {
@@ -198,9 +199,16 @@ function searchByProperty(property, value) {
 
 function handleSearchQuery() {
     const query = searchBar.value.toLowerCase();
-    const inputLabel = document.getElementById("inputGroup-sizing-sm")
-    if (query === '' || currentActivities.size === 0) {
-        inputLabel.innerText = "search";
+
+    if (query === '') {
+        inputLabel.innerText = "Search";
+        return;
+    }
+
+    // If there's no currentActivities, regenerate them.
+    // This allows for the property search to work correctly.
+    if (currentActivities.size === 0) {
+        inputLabel.innerText = "Search";
         regenerateActivities();
     }
 
@@ -209,7 +217,6 @@ function handleSearchQuery() {
         let [property, ...value] = query.split(':').map(el => el.toLowerCase().trim());
         value = value.join(":");
         if (['id', 'name', 'description', 'image', 'price', 'time'].includes(property)) {
-            console.log(`Checking '${property}' against '${value}'`);
             numMatches = searchByProperty(property, value);   
         }
     }
@@ -217,7 +224,8 @@ function handleSearchQuery() {
         numMatches = searchByText(query);
     }
 
-    inputLabel.innerText = `Search (${numMatches} matches)`
+    inputLabel.innerText = `Search (${currentActivities.size} matches)`
+    if (currentFilters.size !== 0) dropdown.innerText = `Filters: (${currentActivities.size} matches)`
 }
 
 function createBaseActivities() {
@@ -246,14 +254,51 @@ function regenerateActivities() {
 }
 
 function resetFilters() {
+    // Clear Filters
     dropdown.innerText = "Filter" // remove the number of matches from the display
     currentFilters.clear();
+
+    // Clear Search
+    inputLabel.innerText = "Search" // remove the number of matches from the display
+    searchBar.value = "";
+
+    // Regenerate Activities
     regenerateActivities()
+}
+
+function sortTags(tags) {
+    newTags = [];
+    for (let tag of tags) {
+        if (tag == "morning" || tag == "afternoon") {
+            // ignore "morning" and "afternoon" tag since
+            // they're dealt with separately to other tags.
+            continue;
+        }
+
+        // Use insertion-sort based logic to insert into the correct 
+        // position so that we don't have to later do `.sort()` on the list.
+        let hasInserted = false;
+        for (let i = 0; i < newTags.length; i++) {
+            if (newTags[i] > tag) {
+                // tag should be inserted at index `i`, pushing the current element further down
+                newTags.splice(i, 0, tag);
+                hasInserted = true;
+                break;
+            }
+        }
+        if (!hasInserted) {
+            // tag needs to be added to the end
+            newTags.push(tag);
+        }
+    }
+
+    return ["morning", "afternoon"].concat(newTags);
 }
 
 function processFilters() {
     if (currentFilters.size === 0 || needToRegenerate) {
         regenerateActivities();
+        handleSearchQuery();
         needToRegenerate = false;
     }
     
@@ -274,9 +319,13 @@ function processFilters() {
             break
         }
     }
-    // If filters are applied, show how matches there are
-    if (currentFilters.size === 0) dropdown.innerText = "Filter"
-    else dropdown.innerText = "Filter " + (hasMatchingActivities ? `(${currentActivities.size} matches)` : "(no matches)")
+    // If filters are applied, show how many matches there are
+    if (currentFilters.size === 0) dropdown.innerText = "Filter" // we've just removed all filters, so don't show num matches anymore
+    else {
+        const matchesString = (hasMatchingActivities ? `(${currentActivities.size} matches)` : "(no matches)");
+        dropdown.innerText = `Filter ${matchesString}`; // show num matches
+        if (searchBar.value !== "") inputLabel.innerText = `Search ${matchesString}`;
+    }
 }
 
 
@@ -360,7 +409,7 @@ function genDropdown() {
             if (tempTags.size != 0) {
                 Array.from(tempTags).sort().forEach(remainingTag => allTags.add(remainingTag));
                 div.querySelectorAll("button").forEach(button => button.remove());
-                Array.from(allTags).sort((a, b) => {a == "morning" || a == "afternoon" || a < b ? -1 : 1}).forEach(tag => createDropdownButtonFromTag(div, tag));
+                sortTags(allTags).forEach(tag => createDropdownButtonFromTag(div, tag));
             }
             finishEarly = true;
             return
@@ -371,7 +420,7 @@ function genDropdown() {
     const dropdownMenu = document.createElement("div");
     dropdownMenu.classList.add("dropdown-menu", "scrollable-menu");
     dropdownMenu.setAttribute("aria-labelledby",  "dropdown-filter");
-    for (let tag of Array.from(allTags).sort((a, b) => {a == "morning" || a == "afternoon" || a < b ? -1 : 1}))  {
+    for (let tag of sortTags(allTags))  {
         createDropdownButtonFromTag(dropdownMenu, tag);
     }
     main.append(dropdownMenu);
