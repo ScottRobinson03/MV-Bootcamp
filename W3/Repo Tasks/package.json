@@ -4,6 +4,7 @@
     "jest": "^29.2.0"
   },
   "scripts": {
+    "test": "jest ./tests --verbose --silent --runInBand",
     "test:d1": "jest ./tests/d1-tests --verbose --silent --runInBand",
     "test:d1:easy": "jest ./tests/d1-tests/1-easy --verbose --silent --runInBand",
     "test:d1:easy:addTwoNumbers": "jest ./tests/d1-tests/1-easy/addTwoNumbers --verbose --silent --runInBand",
