@@ -13,6 +13,13 @@
     "test:d1:medium:divideTwoIntegers": "jest ./tests/d1-tests/2-medium/divideTwoIntegers --verbose --silent --runInBand",
     "test:d1:medium:multiplyTwoIntegers": "jest ./tests/d1-tests/2-medium/multiplyTwoIntegers --verbose --silent --runInBand",
     "test:d1:hard": "jest ./tests/d1-tests/3-hard --verbose --silent --runInBand",
-    "test:d1:hard:addingArrays": "jest ./tests/d1-tests/3-hard/addingArrays --verbose --silent --runInBand"
+    "test:d1:hard:addingArrays": "jest ./tests/d1-tests/3-hard/addingArrays --verbose --silent --runInBand",
+    "test:d2": "jest ./tests/d2-classes --verbose --silent --runInBand",
+    "test:d2:easy": "jest ./tests/d2-classes/1-easy --verbose --silent --runInBand",
+    "test:d2:easy:athlete": "jest ./tests/d2-classes/1-easy/athlete --verbose --silent --runInBand",
+    "test:d2:medium": "jest ./tests/d2-classes/2-medium --verbose --silent --runInBand",
+    "test:d2:medium:laps": "jest ./tests/d2-classes/2-medium laps --verbose --silent --runInBand",
+    "test:d2:hard": "jest ./tests/d2-classes/3-hard --verbose --silent --runInBand",
+    "test:d2:hard:strava": "jest ./tests/d2-classes/3-hard strava --verbose --silent --runInBand"
   }
 }
