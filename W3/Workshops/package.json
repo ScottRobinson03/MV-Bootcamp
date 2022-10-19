@@ -6,6 +6,11 @@
   "scripts": {
     "test": "jest --coverage --watchAll",
     "test:d1": "jest ./d1-tests",
-    "test:d2": "jest ./d2-classes"
+    "test:d2": "jest ./d2-classes",
+    "test:d3": "jest ./d3-static-inheritance",
+    "test:d3:tukTuk": "jest ./d3-static-inheritance/tukTuk",
+    "test:d3:smallTukTuk": "jest ./d3-static-inheritance/smallTukTuk",
+    "test:d3:mediumTukTuk": "jest ./d3-static-inheritance/mediumTukTuk",
+    "test:d3:lorry": "jest ./d3-static-inheritance/lorry"
   }
 }
