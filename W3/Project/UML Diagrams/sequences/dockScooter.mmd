@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor User
+    actor Scooter
+
+    activate User
+    activate Scooter
+
+    User ->> Scooter: Dock Scooter
+    Scooter ->> ScooterApp: Dock Me
+    activate ScooterApp
+    alt Station is valid
+        %% See hireScooter.mmd for proper info on what happens when ride ends
+        ScooterApp -->> Scooter: Ride Ended
+        deactivate ScooterApp
+        deactivate Scooter
+        deactivate User
+    
+    else Station is invalid
+        activate ScooterApp
+
+        ScooterApp -->> Scooter: Valid docking station required!
+        deactivate ScooterApp
+
+        Scooter -->> User: Valid docking station required!
+        %% Scooter and User remain active since the ride hasn't ended
+    end
