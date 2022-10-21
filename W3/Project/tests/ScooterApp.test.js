@@ -135,8 +135,9 @@ describe("Testing ScooterApp.removeScooter() method", () => {
 
     test('Removing an existing scooters logs a message and updates the stations property', () => {
         const scooter = new Scooter("London", "fakeUser");
+        const otherScooter = new Scooter("Edinburgh", "fakeUser2"); // needed for coverage
 
-        app.stations = {Birmingham: [], Bristol: [scooter]}; // ensure that scooter exists
+        app.stations = {Birmingham: [otherScooter], Bristol: [scooter]}; // ensure that scooter exists
         const spy = jest.spyOn(console, 'log');
 
         app.removeScooter(scooter);
