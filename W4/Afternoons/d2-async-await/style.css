@@ -1,0 +1,36 @@
+button {
+    width: 100%;
+}
+
+img {
+    display:block;
+    height: 128px;
+    margin:auto;
+    width: 128px;
+}
+
+p {
+    margin: 0;
+    text-align: center;
+}
+
+table {
+    margin-top: 2vw;
+}
+
+table, th, td {
+    border: 1px solid black;
+    height: fit-content
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
