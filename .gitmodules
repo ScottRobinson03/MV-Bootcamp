@@ -7,3 +7,6 @@
 [submodule "W6/Repo Tasks"]
 	path = W6/Repo Tasks
 	url = git@github.com:swe-assignments/week-6.git
+[submodule "W6/Project"]
+	path = W6/Project
+	url = git@github.com:ScottRobinsonSky/week-6-project.git
