@@ -10,3 +10,6 @@
 [submodule "W6/Project"]
 	path = W6/Project
 	url = git@github.com:ScottRobinsonSky/week-6-project.git
+[submodule "W7/Project"]
+	path = W7/Project
+	url = git@github.com:ScottRobinsonSky/full-stack-project.git
