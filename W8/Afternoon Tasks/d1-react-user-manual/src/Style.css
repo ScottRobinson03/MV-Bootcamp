@@ -1,0 +1,101 @@
+:root {
+    --magenta:rgb(204, 8, 165);
+    --purple:rgb(67, 67, 175);
+    --grey: rgb(170, 175, 177);
+    --lightblue: rgb(44, 138, 238);
+}
+
+body {
+    background-image: repeating-linear-gradient(to left, var(--magenta), var(--purple));
+    margin: 20px 10px;
+}
+
+div.App {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 0.55fr);
+    row-gap: var(--main-row-gap);
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    margin-bottom: 5vw;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    font-style: italic;
+    margin-bottom: 3vw;
+    margin-top: 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#img-grid {
+    display: flex;
+    justify-content: center;
+}
+  
+#img-grid img {
+    margin: 0 0.75vw;
+    width: 20%;
+}
+
+li {
+    color: var(--grey);
+    font-size: var(--li-font-size);
+    list-style-type: none;
+}
+
+ul {
+    padding-left: 0;
+    text-align: center;
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+    :root {
+        --h1-font-size: 2.5vw;
+        --h2-font-size: 2vw;
+        --li-font-size: 1.4vw;
+        --main-row-gap: 1vw;
+    }
+}
+
+/* tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    :root {
+        --h1-font-size: 5vw;
+        --h2-font-size: 4vw;
+        --li-font-size: 2.25vw;
+        --main-row-gap: 7.5vh;
+    }
+
+    /* Separate list items as text may now wrap over lines */
+    li {
+        padding-bottom: 1.5vw;
+    }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+    :root {
+        --h1-font-size: 7vw;
+        --h2-font-size: 5vw;
+        --li-font-size: 3.5vw;
+        --main-row-gap: 5vw;
+    }
+
+    /* Separate list items as text will now wrap over lines */
+    li {
+        padding-bottom: 1.5vw;
+    }
+
+    /* make main grid 1 wide instead of 2 wide */
+    main {
+        grid-template-columns: 1fr;
+        row-gap: 5vw;
+    }
+}
