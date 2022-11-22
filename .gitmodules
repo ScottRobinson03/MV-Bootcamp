@@ -13,3 +13,6 @@
 [submodule "W7/Project"]
 	path = W7/Project
 	url = git@github.com:ScottRobinsonSky/full-stack-project.git
+[submodule "W8/Workshops/d2-react-hooks"]
+	path = W8/Workshops/d2-react-hooks
+	url = git@github.com:ScottRobinsonSky/React-Hooks-Demo.git
