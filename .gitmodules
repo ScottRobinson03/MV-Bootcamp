@@ -16,3 +16,6 @@
 [submodule "W8/Workshops/d2-react-hooks"]
 	path = W8/Workshops/d2-react-hooks
 	url = git@github.com:ScottRobinsonSky/React-Hooks-Demo.git
+[submodule "W8/Afternoon Tasks/d3-react-blog"]
+	path = W8/Afternoon Tasks/d3-react-blog
+	url = git@github.com:ScottRobinsonSky/react-blog.git
