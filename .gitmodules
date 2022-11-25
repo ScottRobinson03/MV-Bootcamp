@@ -19,3 +19,6 @@
 [submodule "W8/Afternoon Tasks/d3-react-blog"]
 	path = W8/Afternoon Tasks/d3-react-blog
 	url = git@github.com:ScottRobinsonSky/react-blog.git
+[submodule "W8/Project"]
+	path = W8/Project
+	url = git@github.com:anammSky/to-do-app.git
