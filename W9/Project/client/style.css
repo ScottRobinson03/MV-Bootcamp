@@ -1,0 +1,12 @@
+body {
+    background-color: #252d49;
+    margin: 0;
+    height: 100vh;
+}
+
+div#phaser-root {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
