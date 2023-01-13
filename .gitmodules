@@ -24,4 +24,4 @@
 	url = git@github.com:anammSky/to-do-app.git
 [submodule "W10-W12/Project"]
 	path = W10-W12/Project
-	url = https://github.com/MissKayGhann/World-Cup-Players
+	url = https://github.com/MissKayGhann/World-Cup-Players.git
